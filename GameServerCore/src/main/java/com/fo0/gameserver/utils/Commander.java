@@ -10,28 +10,25 @@ import java.io.Writer;
 import java.util.Date;
 
 public class Commander {
-	public static String command(String startOrStop, boolean waitForResult) {
-		System.out.println(new Date() + ": Recieved command: " + startOrStop);
+	public static String command(String scriptPath) {
+		System.out.println(new Date() + ": Recieved command: " + scriptPath);
 		String tcpdumpCmdResponse = "";
 		ProcessBuilder crunchifyProcessBuilder = null;
 
 		String operatingSystem = System.getProperty("os.name");
 		if (operatingSystem.toLowerCase().contains("window")) {
-			crunchifyProcessBuilder = new ProcessBuilder(
-					new String[] { "cmd.exe", "/c", "start", "C:/Users/space/Desktop/" + startOrStop + ".lnk" });
+			crunchifyProcessBuilder = new ProcessBuilder(new String[] { "cmd.exe", "/c", "start", scriptPath });
 		}
 		crunchifyProcessBuilder.redirectErrorStream(true);
 		try {
 			Process process = crunchifyProcessBuilder.start();
-			if (waitForResult) {
-				InputStream crunchifyStream = process.getInputStream();
-				tcpdumpCmdResponse = getStringFromStream(crunchifyStream);
-				crunchifyStream.close();
-			}
+			InputStream crunchifyStream = process.getInputStream();
+			tcpdumpCmdResponse = getStringFromStream(crunchifyStream);
+			crunchifyStream.close();
 		} catch (Exception e) {
 			System.out.println("Processing cmd failed " + e);
 		}
-		System.out.println(new Date() + "Finished command");
+		System.out.println(new Date() + " Finished command");
 		return tcpdumpCmdResponse;
 	}
 
