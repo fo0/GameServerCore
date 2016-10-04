@@ -26,6 +26,8 @@ public class GameManagerAPI {
 	@Path("/command")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response test(String post) {
+		System.out.println("Parameters: "+post);
+		
 		if (post != null)
 			Response.serverError().build();
 
@@ -40,8 +42,10 @@ public class GameManagerAPI {
 			Logger.log.error("Server API Comnmand not found: " + args[1] + " | " + e);
 			return Response.status(Status.NOT_FOUND).build();
 		}
+		
+		
 
-		Commander.command("PATH");
+//		Commander.command("PATH");
 
 		return Response.ok().build();
 	}

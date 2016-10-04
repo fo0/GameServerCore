@@ -4,50 +4,50 @@ import com.google.gson.Gson;
 
 public class GameModelConfig {
 
-	private String gameName;
-	private String startScript;
-	private String stopScript;
+	private String name;
+	private String startscript;
+	private String stopscript;
 
 	public GameModelConfig parseJson(String json) {
 		Gson gson = new Gson();
 		GameModelConfig model = gson.fromJson(json, GameModelConfig.class);
-		setGameName(model.getGameName());
-		setStartScript(model.getStartScript());
-		setStopScript(model.getStopScript());
+		setName(model.getName());
+		setStartscript(model.getStartscript());
+		setStopscript(model.getStopscript());
 		return model;
 	}
 
-	public String getGameName() {
-		return gameName;
+	public String getName() {
+		return name;
 	}
 
-	public void setGameName(String gameName) {
-		this.gameName = gameName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getStartScript() {
-		return startScript;
+	public String getStartscript() {
+		return startscript;
 	}
 
-	public void setStartScript(String startScript) {
-		this.startScript = startScript;
+	public void setStartscript(String startscript) {
+		this.startscript = startscript;
 	}
 
-	public String getStopScript() {
-		return stopScript;
+	public String getStopscript() {
+		return stopscript;
 	}
 
-	public void setStopScript(String stopScript) {
-		this.stopScript = stopScript;
+	public void setStopscript(String stopscript) {
+		this.stopscript = stopscript;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((gameName == null) ? 0 : gameName.hashCode());
-		result = prime * result + ((startScript == null) ? 0 : startScript.hashCode());
-		result = prime * result + ((stopScript == null) ? 0 : stopScript.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((startscript == null) ? 0 : startscript.hashCode());
+		result = prime * result + ((stopscript == null) ? 0 : stopscript.hashCode());
 		return result;
 	}
 
@@ -60,29 +60,29 @@ public class GameModelConfig {
 		if (!(obj instanceof GameModelConfig))
 			return false;
 		GameModelConfig other = (GameModelConfig) obj;
-		if (gameName == null) {
-			if (other.gameName != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!gameName.equals(other.gameName))
+		} else if (!name.equals(other.name))
 			return false;
-		if (startScript == null) {
-			if (other.startScript != null)
+		if (startscript == null) {
+			if (other.startscript != null)
 				return false;
-		} else if (!startScript.equals(other.startScript))
+		} else if (!startscript.equals(other.startscript))
 			return false;
-		if (stopScript == null) {
-			if (other.stopScript != null)
+		if (stopscript == null) {
+			if (other.stopscript != null)
 				return false;
-		} else if (!stopScript.equals(other.stopScript))
+		} else if (!stopscript.equals(other.stopscript))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "GameModelConfig [" + (gameName != null ? "gameName=" + gameName + ", " : "")
-				+ (startScript != null ? "startScript=" + startScript + ", " : "")
-				+ (stopScript != null ? "stopScript=" + stopScript : "") + "]";
+		return "GameModelConfig [" + (name != null ? "name=" + name + ", " : "")
+				+ (startscript != null ? "startscript=" + startscript + ", " : "")
+				+ (stopscript != null ? "stopscript=" + stopscript : "") + "]";
 	}
 
 }

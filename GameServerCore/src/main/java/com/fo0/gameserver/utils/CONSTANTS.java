@@ -16,7 +16,7 @@ public class CONSTANTS {
 	public static String PATH_CONFIG = "";
 
 	static {
-		PATH_CONFIG = System.getProperty("user.dir") + "/config/GameConfig.properties";
+		PATH_CONFIG = System.getProperty("user.dir") + "/config/config.properties";
 
 		if (!new File(System.getProperty("user.dir") + "/config/").exists()) {
 			new File(System.getProperty("user.dir") + "/config/").mkdirs();
@@ -59,7 +59,7 @@ public class CONSTANTS {
 
 	private static void loadProperties(Properties prop) {
 		// Database
-		GAMES_CONFIG_PATH = prop.getProperty("games_config");
+		GAMES_CONFIG_PATH = prop.getProperty("gamescfg");
 	}
 
 }

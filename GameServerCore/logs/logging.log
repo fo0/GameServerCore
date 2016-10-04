@@ -1,0 +1,105 @@
+01:40:26.032 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:40:26.033 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:40:26.034 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:40:26.034 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:40:26.034 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:40:26.034 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:42:40.568 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:42:40.569 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:42:40.570 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:42:40.570 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:42:40.570 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:42:40.570 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:44:34.925 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:44:34.926 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:44:34.927 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:44:34.927 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:44:34.927 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:44:34.927 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:45:16.028 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:45:16.031 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:45:16.032 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:45:16.032 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:45:16.032 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:45:16.032 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:45:16.057 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: null | java.lang.NullPointerException
+01:46:30.435 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:46:30.436 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:46:30.436 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:46:30.436 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:46:30.437 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:46:30.437 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:46:30.461 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: null | java.lang.NullPointerException
+01:47:56.260 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:47:56.262 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:47:56.262 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:47:56.262 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:47:56.262 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:47:56.293 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: /config/games.json | java.io.FileNotFoundException: /config/games.json (Datei oder Verzeichnis nicht gefunden)
+01:48:13.305 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:48:13.308 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:48:13.308 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:48:13.308 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:48:13.308 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:48:13.309 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:48:13.343 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: /config/games.json | java.io.FileNotFoundException: /config/games.json (Datei oder Verzeichnis nicht gefunden)
+01:48:29.895 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:48:29.897 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:48:29.897 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:48:29.897 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:48:29.898 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:48:29.898 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:48:29.937 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: config/games.json | com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+01:49:30.965 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:49:30.966 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:49:30.966 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:49:30.966 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:49:30.967 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:49:30.967 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:49:31.001 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: config/games.json | com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+01:50:19.350 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:50:19.352 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:50:19.353 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:50:19.353 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:50:19.353 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:50:19.353 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:50:19.381 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: config/games.json | com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+01:52:05.464 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:52:05.466 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:52:05.467 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:52:05.467 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:52:05.467 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:52:10.062 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:52:10.064 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:52:10.064 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:52:10.064 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:52:10.065 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:52:10.065 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:52:10.101 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: config/games.json | com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+01:53:52.107 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:53:52.109 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:53:52.109 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:53:52.109 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:53:52.109 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:53:52.109 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:53:52.137 ERROR [ControllerGameConfig.readGames:22] - Cannot find Path: config/games.json | com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+01:55:03.233 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:55:03.235 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:55:03.235 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:55:03.235 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:55:03.235 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:55:03.323 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:55:09.581 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:55:09.584 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:55:09.585 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:55:09.585 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:55:09.585 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:55:09.586 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:55:09.689 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:55:31.112 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:55:31.114 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:55:31.114 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:55:31.114 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:55:31.115 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:55:31.207 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:55:31.207 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]

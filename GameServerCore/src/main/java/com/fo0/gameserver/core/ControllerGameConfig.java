@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fo0.gameserver.model.GameModelConfig;
 import com.fo0.gameserver.utils.CONSTANTS;
+import com.fo0.ss.logger.Logger;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -18,6 +19,7 @@ public class ControllerGameConfig {
 			}.getType());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			Logger.log.error("Cannot find Path: " + CONSTANTS.GAMES_CONFIG_PATH + " | " + e);
 			e.printStackTrace();
 		}
 

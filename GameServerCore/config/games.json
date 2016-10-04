@@ -1,0 +1,12 @@
+[
+{
+  "name": "a",
+  "startscript": "aa",
+  "stopscript": "aaa"
+},
+{
+  "name": "a",
+  "startscript": "aa",
+  "stopscript": "aaa"
+}
+]
