@@ -13,11 +13,10 @@
 		<maven.compiler.testSource>1.8</maven.compiler.testSource>
 		<maven.compiler.testTarget>1.8</maven.compiler.testTarget>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<log4j.version>2.4.1</log4j.version>
 		<version.jdk>1.8</version.jdk>
 		<version.jersey>2.15</version.jersey>
 		<version.mvn.compiler>3.2</version.mvn.compiler>
-		<version.mvn.jar.plugin>2.6</version.mvn.jar.plugin>
+		<version.mvn.war.plugin>2.6</version.mvn.war.plugin>
 	</properties>
 
 	<dependencies>
@@ -40,8 +39,8 @@
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	
-	
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -91,5 +90,5 @@
 	</build>
 
 	<name>Core</name>
-	
+
 </project>

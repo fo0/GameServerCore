@@ -148,3 +148,36 @@
 10:55:11.665 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
 10:55:11.736 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
 10:55:11.736 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+10:55:37.417 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+10:55:37.418 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+10:55:37.418 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+10:55:37.419 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+10:55:37.419 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+10:55:37.419 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+10:55:37.491 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
+10:55:37.491 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+11:01:02.662 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+11:01:02.664 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+11:01:02.664 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+11:01:02.664 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+11:01:02.664 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+11:01:02.664 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+11:01:02.725 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
+11:01:02.725 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+11:07:19.337 ERROR [GameManagerAPI.test:51] - Server API Comnmand not found: start | java.lang.IllegalArgumentException: No enum constant com.fo0.gameserver.enums.GAMESERVER_COMMAND.start
+11:07:26.465 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+11:07:26.467 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+11:07:26.467 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+11:07:26.467 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+11:07:26.467 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+11:07:26.467 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+11:07:26.540 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
+11:07:26.541 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+11:24:10.866 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+11:24:10.867 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+11:24:10.868 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+11:24:10.868 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+11:24:10.868 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+11:24:10.868 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+11:24:10.943 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
+11:24:10.944 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]

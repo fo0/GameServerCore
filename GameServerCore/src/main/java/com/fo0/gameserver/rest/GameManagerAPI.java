@@ -3,6 +3,7 @@ package com.fo0.gameserver.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -46,7 +47,7 @@ public class GameManagerAPI {
 			Response.noContent().build();
 
 		try {
-			cmd = GAMESERVER_COMMAND.valueOf(args[1]);
+			cmd = GAMESERVER_COMMAND.valueOf(args[1].toUpperCase());
 		} catch (Exception e) {
 			Logger.log.error("Server API Comnmand not found: " + args[1] + " | " + e);
 			return Response.status(Status.NOT_FOUND).build();
@@ -83,6 +84,13 @@ public class GameManagerAPI {
 		StringBuffer buffer = new StringBuffer();
 		result.forEach(e -> buffer.append(e + " \n "));
 		return Response.ok().entity(buffer.toString()).build();
+	}
+
+	@GET
+	@Path("/list")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response gamesList(String post) {
+		return Response.ok().entity(ControllerGameConfig.readGames()).build();
 	}
 
 }
