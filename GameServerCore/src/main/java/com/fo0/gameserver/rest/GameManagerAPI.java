@@ -1,5 +1,6 @@
 package com.fo0.gameserver.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.POST;
@@ -51,15 +52,15 @@ public class GameManagerAPI {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 
-		List<String> result = null;
+		List<String> result = new ArrayList<String>();
 
 		switch (cmd) {
 		case START:
-			result = Commander.execute(true, game.getStartscript());
+			result.addAll(Commander.execute(true, game.getStartscript()));
 			break;
 
 		case STOP:
-			result = Commander.execute(true, game.getStartscript());
+			result.addAll(Commander.execute(true, game.getStartscript()));
 			break;
 
 		case INFO:
@@ -67,8 +68,8 @@ public class GameManagerAPI {
 			break;
 
 		case RESTART:
-			result = Commander.execute(true, game.getStopscript());
-			result = Commander.execute(true, game.getStartscript());
+			result.addAll(result = Commander.execute(true, game.getStopscript()));
+			result.addAll(Commander.execute(true, game.getStartscript()));
 			break;
 
 		default:
@@ -76,7 +77,7 @@ public class GameManagerAPI {
 			break;
 		}
 
-		if (result == null)
+		if (result.isEmpty())
 			Response.serverError().build();
 
 		StringBuffer buffer = new StringBuffer();
