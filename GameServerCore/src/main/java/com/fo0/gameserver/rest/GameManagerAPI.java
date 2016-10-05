@@ -58,11 +58,13 @@ public class GameManagerAPI {
 
 		switch (cmd) {
 		case START:
-			result.addAll(Commander.execute(true, game.getStartscript()));
+//			result.addAll(Commander.execute(true, game.getStartscript()));
+			Commander.executeNoWait(true, game.getStartscript());
 			break;
 
 		case STOP:
-			result.addAll(Commander.execute(true, game.getStartscript()));
+//			result.addAll(Commander.execute(true, game.getStopscript()));
+			Commander.executeNoWait(true, game.getStopscript());
 			break;
 
 		case INFO:
@@ -70,8 +72,9 @@ public class GameManagerAPI {
 			break;
 
 		case RESTART:
-			result.addAll(result = Commander.execute(true, game.getStopscript()));
-			result.addAll(Commander.execute(true, game.getStartscript()));
+			Commander.executeNoWait(true, game.getStopscript());
+			Commander.executeNoWait(true, game.getStartscript());
+//			result.addAll(Commander.execute(true, game.getStartscript()));
 			break;
 
 		default:
@@ -79,12 +82,12 @@ public class GameManagerAPI {
 			break;
 		}
 
-		if (result.isEmpty())
-			Response.serverError().build();
+//		if (result.isEmpty())
+//			Response.serverError().build();
 
-		StringBuffer buffer = new StringBuffer();
-		result.forEach(e -> buffer.append(e + " \n "));
-		return Response.ok().entity(buffer.toString()).build();
+//		StringBuffer buffer = new StringBuffer();
+//		result.forEach(e -> buffer.append(e + " \n "));
+		return Response.ok().build();
 	}
 
 	@GET

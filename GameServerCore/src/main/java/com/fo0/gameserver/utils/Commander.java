@@ -63,6 +63,39 @@ public class Commander {
 		return listOutput;
 	}
 
+	public static void executeNoWait(boolean shell, String cmd) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+
+		ProcessBuilder processBuilder = null;
+
+		String operatingSystem = System.getProperty("os.name");
+
+		if (operatingSystem.toLowerCase().contains("window")) {
+			if (shell)
+				processBuilder = new ProcessBuilder("cmd", "/c", cmd);
+			else
+				processBuilder = new ProcessBuilder(cmd);
+		} else {
+			if (shell)
+				processBuilder = new ProcessBuilder("/bin/bash", "-c", cmd);
+			else
+				processBuilder = new ProcessBuilder(cmd);
+
+		}
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
+		// processBuilder.redirectErrorStream(true);
+
+		try {
+			Process process = processBuilder.start();
+
+		} catch (Exception e) {
+			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
+		}
+	}
+
 	public static List<String> execute(boolean shell, List<String> cmds) {
 		List<String> listOutput = null;
 		List<String> listError = null;
@@ -115,6 +148,42 @@ public class Commander {
 			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
 		}
 		return null;
+
+	}
+
+	public static void executeNoWait(boolean shell, List<String> cmds) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+		List<String> cmd = new ArrayList<String>();
+		ProcessBuilder processBuilder = null;
+
+		String operatingSystem = System.getProperty("os.name");
+
+		if (operatingSystem.toLowerCase().contains("window")) {
+			if (shell) {
+				cmd.add("cmd");
+				cmd.add("/c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+
+		} else {
+			if (shell) {
+				cmd.add("/bin/bash");
+				cmd.add("-c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+		}
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
+		try {
+			Process process = processBuilder.start();
+
+		} catch (Exception e) {
+			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
+		}
 
 	}
 
