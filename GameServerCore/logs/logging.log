@@ -103,3 +103,19 @@
 01:55:31.115 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
 01:55:31.207 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
 01:55:31.207 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:56:28.741 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:56:28.743 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:56:28.743 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:56:28.743 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:56:28.743 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+01:56:28.743 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:56:28.869 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:56:28.870 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:59:17.658 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+01:59:17.660 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git/GameServerCore/GameServerCore/config/logger.properties
+01:59:17.661 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+01:59:17.661 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+01:59:17.661 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:5555/core
+01:59:17.661 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+01:59:17.755 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+01:59:17.755 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
