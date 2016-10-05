@@ -12,14 +12,15 @@ import com.fo0.ss.logger.Logger;
 
 public class CONSTANTS {
 
+	public static final String ROOTFOLDER = "gameservercore";
 	public static String GAMES_CONFIG_PATH = "";
 	public static String PATH_CONFIG = "";
 
 	static {
-		PATH_CONFIG = System.getProperty("user.dir") + "/config/config.properties";
+		PATH_CONFIG = System.getProperty("user.dir") + "/" + ROOTFOLDER + "/" + "config/config.properties";
 
-		if (!new File(System.getProperty("user.dir") + "/config/").exists()) {
-			new File(System.getProperty("user.dir") + "/config/").mkdirs();
+		if (!new File(System.getProperty("user.dir") + "/" + ROOTFOLDER + "/" + "config/").exists()) {
+			new File(System.getProperty("user.dir") + "/" + ROOTFOLDER + "/" + "config/").mkdirs();
 		}
 
 		if (!new File(PATH_CONFIG).exists()) {
@@ -29,7 +30,7 @@ public class CONSTANTS {
 				Properties properties = new Properties();
 
 				// Database Settings
-				properties.setProperty("games_config", "");
+				properties.setProperty("gamescfg", "config/gamescfg.json");
 
 				properties.store(out, "Storing Properties");
 

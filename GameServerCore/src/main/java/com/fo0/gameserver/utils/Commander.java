@@ -1,80 +1,304 @@
 package com.fo0.gameserver.utils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import com.fo0.ss.logger.Logger;
 
 public class Commander {
-	public static String command(String scriptPath) {
+
+	public static List<String> execute(boolean shell, String cmd) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+
+		ProcessBuilder processBuilder = null;
+
+		String operatingSystem = System.getProperty("os.name");
+
+		if (operatingSystem.toLowerCase().contains("window")) {
+			if (shell)
+				processBuilder = new ProcessBuilder("cmd", "/c", cmd);
+			else
+				processBuilder = new ProcessBuilder(cmd);
+		} else {
+			if (shell)
+				processBuilder = new ProcessBuilder("/bin/bash", "-c", cmd);
+			else
+				processBuilder = new ProcessBuilder(cmd);
+
+		}
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
+		// processBuilder.redirectErrorStream(true);
+
+		try {
+			Process process = processBuilder.start();
+
+			// stdout
+			InputStream stdout = process.getInputStream();
+			listOutput = getStringListFromStream(stdout);
+			stdout.close();
+
+			// errout
+			InputStream errout = process.getErrorStream();
+			listError = getStringListFromStream(errout);
+			errout.close();
+
+			if (listError != null && !listError.isEmpty())
+				return listError;
+
+			if (listOutput != null && !listOutput.isEmpty())
+				return listOutput;
+
+		} catch (Exception e) {
+			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
+		}
+		return listOutput;
+	}
+
+	public static List<String> execute(boolean shell, List<String> cmds) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+		List<String> cmd = new ArrayList<String>();
+		ProcessBuilder processBuilder = null;
+
+		String operatingSystem = System.getProperty("os.name");
+
+		if (operatingSystem.toLowerCase().contains("window")) {
+			if (shell) {
+				cmd.add("cmd");
+				cmd.add("/c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+
+		} else {
+			if (shell) {
+				cmd.add("/bin/bash");
+				cmd.add("-c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+		}
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
+		// processBuilder.redirectErrorStream(true);
+
+		try {
+			Process process = processBuilder.start();
+
+			// stdout
+			InputStream stdout = process.getInputStream();
+			listOutput = getStringListFromStream(stdout);
+			stdout.close();
+
+			// errout
+			InputStream errout = process.getErrorStream();
+			listError = getStringListFromStream(errout);
+			errout.close();
+
+			if (listError != null && !listError.isEmpty())
+				return listError;
+
+			if (listOutput != null && !listOutput.isEmpty())
+				return listOutput;
+
+		} catch (Exception e) {
+			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
+		}
+		return null;
+
+	}
+
+	public static boolean simpleExecute(boolean shell, List<String> cmds) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+		List<String> cmd = new ArrayList<String>();
+		ProcessBuilder processBuilder = null;
+
+		String operatingSystem = System.getProperty("os.name");
+
+		if (operatingSystem.toLowerCase().contains("window")) {
+			if (shell) {
+				cmd.add("cmd");
+				cmd.add("/c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+
+		} else {
+			if (shell) {
+				cmd.add("/bin/bash");
+				cmd.add("-c");
+			}
+			cmd.addAll(cmds);
+			processBuilder = new ProcessBuilder(cmd);
+		}
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
+		// processBuilder.redirectErrorStream(true);
+
+		try {
+			Process process = processBuilder.start();
+
+			// stdout
+			InputStream stdout = process.getInputStream();
+			listOutput = getStringListFromStream(stdout);
+			stdout.close();
+
+			// errout
+			InputStream errout = process.getErrorStream();
+			listError = getStringListFromStream(errout);
+			errout.close();
+
+			if (listError != null && !listError.isEmpty()) {
+				Logger.log.error("Detected Errors");
+				listError.forEach(e -> Logger.log.error(e));
+				return false;
+			}
+
+			if (listOutput != null && !listOutput.isEmpty()) {
+				Logger.log.info("Executed Successfull");
+				listOutput.forEach(e -> Logger.log.info(e));
+				return true;
+			}
+
+			Logger.log.info("Nothing detected - decide as success");
+			return true;
+
+		} catch (Exception e) {
+			Logger.log.error("ERROR in Commander | Cmd: " + cmd + " | " + e);
+		}
+		return false;
+
+	}
+
+	public static boolean simpleExecuteScript(String scriptPath) {
+		List<String> listOutput = null;
+		List<String> listError = null;
+
 		System.out.println(new Date() + ": Recieved command: " + scriptPath);
 		String tcpdumpCmdResponse = "";
-		ProcessBuilder crunchifyProcessBuilder = null;
+		ProcessBuilder processBuilder = null;
 
 		String operatingSystem = System.getProperty("os.name");
 		if (operatingSystem.toLowerCase().contains("window")) {
-			crunchifyProcessBuilder = new ProcessBuilder(new String[] { "cmd.exe", "/c", "start", scriptPath });
+			processBuilder = new ProcessBuilder(new String[] { "cmd.exe", "/c", "start", scriptPath });
 		}
-		crunchifyProcessBuilder.redirectErrorStream(true);
+
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
 		try {
-			Process process = crunchifyProcessBuilder.start();
-			InputStream crunchifyStream = process.getInputStream();
-			tcpdumpCmdResponse = getStringFromStream(crunchifyStream);
-			crunchifyStream.close();
+			Process process = processBuilder.start();
+
+			// stdout
+			InputStream stdout = process.getInputStream();
+			listOutput = getStringListFromStream(stdout);
+			stdout.close();
+
+			// errout
+			InputStream errout = process.getErrorStream();
+			listError = getStringListFromStream(errout);
+			errout.close();
+
+			if (listError != null && !listError.isEmpty()) {
+				Logger.log.error("Detected Errors");
+				listError.forEach(e -> Logger.log.error(e));
+				return false;
+			}
+
+			if (listOutput != null && !listOutput.isEmpty()) {
+				Logger.log.info("Executed Successfull");
+				listOutput.forEach(e -> Logger.log.info(e));
+				return true;
+			}
+
+			Logger.log.info("Nothing detected - decide as success");
+			return true;
+
 		} catch (Exception e) {
-			System.out.println("Processing cmd failed " + e);
+			Logger.log.error("ERROR in Commander | Cmd: " + scriptPath + " | " + e);
 		}
-		System.out.println(new Date() + " Finished command");
-		return tcpdumpCmdResponse;
+		return false;
+
 	}
 
-	public static String commandKill(String service, boolean waitForResult) {
+	public static boolean simpleExecuteServiceKill(String service) {
 		System.out.println(new Date() + ": Recieved command: " + service);
-		String tcpdumpCmdResponse = "";
-		ProcessBuilder crunchifyProcessBuilder = null;
+
+		List<String> listOutput = null;
+		List<String> listError = null;
+
+		List<String> tcpdumpCmdResponse = null;
+		ProcessBuilder processBuilder = null;
 
 		String operatingSystem = System.getProperty("os.name");
 		if (operatingSystem.toLowerCase().contains("window")) {
-			crunchifyProcessBuilder = new ProcessBuilder(
-					new String[] { "cmd.exe", "/c", "TASKKILL", "/IM", service, "/F" });
+			processBuilder = new ProcessBuilder(new String[] { "cmd.exe", "/c", "TASKKILL", "/IM", service, "/F" });
 		}
-		crunchifyProcessBuilder.redirectErrorStream(true);
+		processBuilder.directory(new File(System.getProperty("user.home")));
+
 		try {
-			Process process = crunchifyProcessBuilder.start();
-			if (waitForResult) {
-				InputStream crunchifyStream = process.getInputStream();
-				tcpdumpCmdResponse = getStringFromStream(crunchifyStream);
-				crunchifyStream.close();
+			Process process = processBuilder.start();
+
+			// stdout
+			InputStream stdout = process.getInputStream();
+			listOutput = getStringListFromStream(stdout);
+			stdout.close();
+
+			// errout
+			InputStream errout = process.getErrorStream();
+			listError = getStringListFromStream(errout);
+			errout.close();
+
+			if (listError != null && !listError.isEmpty()) {
+				Logger.log.error("Detected Errors");
+				listError.forEach(e -> Logger.log.error(e));
+				return false;
 			}
+
+			if (listOutput != null && !listOutput.isEmpty()) {
+				Logger.log.info("Executed Successfull");
+				listOutput.forEach(e -> Logger.log.info(e));
+				return true;
+			}
+
+			Logger.log.info("Nothing detected - decide as success");
+			return true;
+
 		} catch (Exception e) {
-			System.out.println("Processing cmd failed " + e);
+			Logger.log.error("ERROR in Commander | Cmd: " + service + " | " + e);
 		}
-		System.out.println(new Date() + "Finished command");
-		return tcpdumpCmdResponse;
+		return false;
 	}
 
-	private static String getStringFromStream(InputStream crunchifyStream) throws IOException {
-		System.out.println("inside getStringFromStream()");
-		if (crunchifyStream != null) {
-			Writer crunchifyWriter = new StringWriter();
+	private static List<String> getStringListFromStream(InputStream stream) throws IOException {
+		if (stream != null) {
+			List<String> list = new ArrayList<String>();
 
-			char[] crunchifyBuffer = new char[2048];
 			try {
-				Reader crunchifyReader = new BufferedReader(new InputStreamReader(crunchifyStream, "UTF-8"));
-				int count;
-				while ((count = crunchifyReader.read(crunchifyBuffer)) != -1) {
-					crunchifyWriter.write(crunchifyBuffer, 0, count);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					list.add(line);
 				}
+
 			} finally {
-				crunchifyStream.close();
+				stream.close();
 			}
-			return crunchifyWriter.toString();
+			return list;
 		} else {
-			return "";
+			return null;
 		}
 	}
+
 }
