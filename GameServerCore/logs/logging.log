@@ -127,3 +127,24 @@
 09:59:57.953 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
 09:59:58.020 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
 09:59:58.020 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]
+10:51:20.681 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+10:51:20.682 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+10:51:20.682 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+10:51:20.683 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+10:51:20.683 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+10:51:20.709 ERROR [ControllerGameConfig.readGames:24] - Cannot find Path: config/gamescfg.json | java.io.FileNotFoundException: config/gamescfg.json (Datei oder Verzeichnis nicht gefunden)
+10:54:06.967 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+10:54:06.970 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+10:54:06.970 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+10:54:06.971 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+10:54:06.971 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+10:54:06.971 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+10:54:06.999 ERROR [ControllerGameConfig.readGames:24] - Cannot find Path: config/games.json | java.io.FileNotFoundException: config/games.json (Datei oder Verzeichnis nicht gefunden)
+10:55:11.663 INFO  [Logger.<clinit>:12] - Logger-Configure Options:
+10:55:11.664 INFO  [Logger.<clinit>:13] - 	 Logger-Path: /home/max/git_gameserver/GameServerCore/GameServerCore/config/logger.properties
+10:55:11.665 INFO  [Logger.<clinit>:14] - 	 Logger-Level: INFO
+10:55:11.665 INFO  [Logger.<clinit>:16] - Logger has been successful initialized
+10:55:11.665 INFO  [RESTServer.start:25] - WebServer has been successful started and listening on: http://localhost:7777/core
+10:55:11.665 INFO  [ControllerRESTServer.start:10] - [SUCCESS] Started: RESTServer
+10:55:11.736 INFO  [Main.lambda$0:12] - GameModelConfig [name=test, startscript=/home/max/start.sh, stopscript=/home/max/start.sh]
+10:55:11.736 INFO  [Main.lambda$0:12] - GameModelConfig [name=a, startscript=aa, stopscript=aaa]

@@ -1,0 +1,12 @@
+[
+{
+  "name": "test",
+  "startscript": "/home/max/start.sh",
+  "stopscript": "/home/max/start.sh"
+},
+{
+  "name": "a",
+  "startscript": "aa",
+  "stopscript": "aaa"
+}
+]
