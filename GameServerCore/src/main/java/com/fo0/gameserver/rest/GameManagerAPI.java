@@ -3,6 +3,7 @@ package com.fo0.gameserver.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -89,7 +90,7 @@ public class GameManagerAPI {
 	@GET
 	@Path("/list")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response gamesList(String post) {
+	public Response gamesList() {
 		return Response.ok().entity(ControllerGameConfig.readGames()).build();
 	}
 
