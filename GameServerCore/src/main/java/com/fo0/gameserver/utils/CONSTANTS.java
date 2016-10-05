@@ -29,7 +29,7 @@ public class CONSTANTS {
 				Properties properties = new Properties();
 
 				// Database Settings
-				properties.setProperty("gamescfg", "/config/gamescfg.json");
+				properties.setProperty("gamescfg", "config/games.json");
 
 				properties.store(out, "Storing Properties");
 

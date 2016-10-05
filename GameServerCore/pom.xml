@@ -30,7 +30,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.fo0.ss.logger</groupId>
+			<groupId>com.fo0</groupId>
 			<artifactId>Logger</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
