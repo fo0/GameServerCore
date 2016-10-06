@@ -51,8 +51,10 @@ public class Commander {
 			listError = getStringListFromStream(errout);
 			errout.close();
 
-			if (listError != null && !listError.isEmpty())
+			if (listError != null && !listError.isEmpty()) {
+				listError.add(0, "ERROR");
 				return listError;
+			}
 
 			if (listOutput != null && !listOutput.isEmpty())
 				return listOutput;
@@ -138,8 +140,10 @@ public class Commander {
 			listError = getStringListFromStream(errout);
 			errout.close();
 
-			if (listError != null && !listError.isEmpty())
+			if (listError != null && !listError.isEmpty()){
+				listError.add(0, "ERROR");
 				return listError;
+			}
 
 			if (listOutput != null && !listOutput.isEmpty())
 				return listOutput;

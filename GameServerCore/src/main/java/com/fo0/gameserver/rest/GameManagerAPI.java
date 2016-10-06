@@ -33,10 +33,10 @@ public class GameManagerAPI {
 	@POST
 	@Path("/command")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response test(String post) {
-		System.out.println("Parameters: " + post);
+	public Response command(String post) {
+		Logger.log.debug("Parameters: " + post);
 
-		if (post != null)
+		if (post == null)
 			Response.noContent().build();
 
 		String[] args = post.split(",");
@@ -58,23 +58,28 @@ public class GameManagerAPI {
 
 		switch (cmd) {
 		case START:
-//			result.addAll(Commander.execute(true, game.getStartscript()));
-			Commander.executeNoWait(true, game.getStartscript());
+			result.addAll(Commander.execute(true, game.getStartscript()));
+			// Commander.executeNoWait(true, game.getStartscript());
 			break;
 
 		case STOP:
-//			result.addAll(Commander.execute(true, game.getStopscript()));
-			Commander.executeNoWait(true, game.getStopscript());
+			result.addAll(Commander.execute(true, game.getStopscript()));
+			// Commander.executeNoWait(true, game.getStopscript());
 			break;
 
 		case INFO:
 			Logger.log.warn(LOGSTATE.NOT_IMPLEMENTED);
 			break;
 
+		case STATUS:
+			result.addAll(Commander.execute(true, game.getAlivscript()));
+			break;
+
 		case RESTART:
-			Commander.executeNoWait(true, game.getStopscript());
-			Commander.executeNoWait(true, game.getStartscript());
-//			result.addAll(Commander.execute(true, game.getStartscript()));
+			// Commander.executeNoWait(true, game.getStopscript());
+			// Commander.executeNoWait(true, game.getStartscript());
+			result.addAll(Commander.execute(true, game.getStopscript()));
+			result.addAll(Commander.execute(true, game.getStartscript()));
 			break;
 
 		default:
@@ -82,11 +87,13 @@ public class GameManagerAPI {
 			break;
 		}
 
-//		if (result.isEmpty())
-//			Response.serverError().build();
+		Logger.log.info(LOGSTATE.PROCESSING + " Game: " + game.getName() + ":|: Command: " + cmd);
 
-//		StringBuffer buffer = new StringBuffer();
-//		result.forEach(e -> buffer.append(e + " \n "));
+		// if (result.isEmpty())
+		// Response.serverError().build();
+
+		// StringBuffer buffer = new StringBuffer();
+		// result.forEach(e -> buffer.append(e + " \n "));
 		return Response.ok().build();
 	}
 

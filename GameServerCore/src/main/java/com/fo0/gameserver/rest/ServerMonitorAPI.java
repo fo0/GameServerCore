@@ -12,8 +12,8 @@ public class ServerMonitorAPI {
 	@GET
 	@Path("/alive")
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response test() {
-		return Response.ok().entity("Accepted").build();
+	public Response alive() {
+		return Response.ok().build();
 	}
 
 }
