@@ -1,4 +1,4 @@
-package com.fo0.gameserver.core;
+package com.fo0.gameserver.controller;
 
 import java.io.FileReader;
 import java.util.List;

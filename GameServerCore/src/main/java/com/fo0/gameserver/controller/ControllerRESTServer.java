@@ -1,4 +1,4 @@
-package com.fo0.gameserver.core;
+package com.fo0.gameserver.controller;
 
 import com.ctf.rest.server.RESTServer;
 import com.fo0.ss.logger.Logger;

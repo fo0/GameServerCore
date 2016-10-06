@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.fo0.gameserver.core.ControllerGameConfig;
+import com.fo0.gameserver.controller.ControllerGameConfig;
 import com.fo0.gameserver.enums.GAMESERVER_COMMAND;
 import com.fo0.gameserver.model.GameModelConfig;
 import com.fo0.gameserver.utils.Commander;
