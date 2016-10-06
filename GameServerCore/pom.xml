@@ -36,8 +36,14 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.ctf.libs.restserver</groupId>
+			<groupId>com.fo0</groupId>
 			<artifactId>RESTServer</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fo0</groupId>
+			<artifactId>PluginManager</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 
